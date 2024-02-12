@@ -1,15 +1,14 @@
 {
-  "name": "assignment-task",
+  "name": "jagga-tax-problem",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js",
     "dev": "nodemon index.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "Usama Saleem",
   "license": "ISC",
   "dependencies": {
     "nodemon": "^3.0.3"
