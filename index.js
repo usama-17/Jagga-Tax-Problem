@@ -44,25 +44,26 @@ function jaggaTax(input) {
     let T = parseInt(lines[0]);
     let index = 1;
 
-    while (T--) {
-        let [N, M] = lines[index++].split(' ').map(Number);
-        let graph = [];
+    // we can enable this commented loop if we have more than 1 test cases
+    // while (T--) {
+    let [N, M] = lines[index++].split(' ').map(Number);
+    let graph = [];
 
-        for (let i = 0; i < M; i++) {
-            graph.push(lines[index++].split(' ').map(Number));
-        }
-
-        let dist = floydWarshall(graph, N);
-        let jrp = calculateJRP(dist, N);
-
-        let result = jrp
-            .map((value, idx) => ({ index: idx + 1, value }))
-            .sort((a, b) => b.value - a.value || a.index - b.index)
-            .slice(0, 5)
-            .map((a) => a.index);
-
-        console.log(result.join('\n'));
+    for (let i = 0; i < M; i++) {
+        graph.push(lines[index++].split(' ').map(Number));
     }
+
+    let dist = floydWarshall(graph, N);
+    let jrp = calculateJRP(dist, N);
+
+    let result = jrp
+        .map((value, idx) => ({index: idx + 1, value}))
+        .sort((a, b) => b.value - a.value || a.index - b.index)
+        .slice(0, 5)
+        .map((a) => a.index);
+
+    console.log(result.join('\n'));
+    // }
 }
 
 // Sample Input
